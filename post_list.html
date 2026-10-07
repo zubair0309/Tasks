@@ -1,0 +1,20 @@
+  GNU nano 9.0                             myapp/post_list.html
+<!DOCTYPE html>
+<html>
+<head>
+<<title> tool </title>
+</head>
+<body>
+<h1> list of items </h1>
+<ul>
+   {% for post  in posts %}
+   <li>{{post.title}}</li>
+   <li>{{post.content}}</li>
+   <li>{{post.views}}</li>
+   {% empty %}
+   <li>No items Available</li>
+   {% endfor %}
+</ul>
+</body>
+</html>
+

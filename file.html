@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ name }} - Portfolio</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #222;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        nav {
+            background: #333;
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 20px;
+        }
+
+        section {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        .skills span {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+
+        .project {
+            background: #f1f1f1;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>{{ name }}</h1>
+    <p>{{ role }}</p>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>{{ about }}</p>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+
+    <div class="skills">
+        {% for skill in skills %}
+            <span>{{ skill }}</span>
+        {% endfor %}
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+
+    {% for project in projects %}
+        <div class="project">
+            <h3>{{ project.name }}</h3>
+            <p>{{ project.description }}</p>
+        </div>
+    {% endfor %}
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+
+    <p><strong>Email:</strong> yourmail@gmail.com</p>
+    <p><strong>Phone:</strong> +91 XXXXX XXXXX</p>
+    <p><strong>Location:</strong> India</p>
+</section>
+
+<footer>
+    <p>© 2026 {{ name }}. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
